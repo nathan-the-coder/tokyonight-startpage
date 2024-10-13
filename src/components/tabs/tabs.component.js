@@ -1,3 +1,5 @@
+/* Changes the ulafter part and put margin top to make it to the center and also increaet the backgroun size to  */
+
 class Links extends Component {
   constructor() {
     super();
@@ -133,7 +135,7 @@ class Tabs extends Component {
           --panelbg: transparent;
           --flavour: var(--accent);
           width: 100%;
-          height: 100%;
+          height: 107%;
           right: 100%;
           background: #1e1e2e url("../img/bg-1.gif") no-repeat left;
           background-size: cover;
@@ -181,25 +183,40 @@ class Tabs extends Component {
           z-index: 1;
       }
 
-      .categories .links {
-          right: 0;
-          width: 70%;
-          height: 100%;
-          background: linear-gradient(
-              135deg, 
-              rgba(30, 30, 46, 0.8) 0%,
-              rgba(40, 40, 60, 0.8) 50%,
-              rgba(50, 50, 74, 0.8) 100%
-          );
-          backdrop-filter: blur(50px);
-          -webkit-backdrop-filter: blur(10px); /* For Safari support */
-          padding: 5%;
-          flex-wrap: wrap;
-          overflow-y: auto;
-          scrollbar-width: thin;
-          scrollbar-color: var(--flavour) #1e1e2e;
-          transition: background 0.3s ease;
-      }
+.categories .links {
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        135deg,
+        rgba(29, 1, 59, 1) 0%,
+        rgba(42, 38, 75, 1) 33%,
+        rgba(72, 69, 163, 1) 66%,
+        rgba(29, 1, 59, 1) 100%
+    );
+    background-size: 400% 400%;
+    animation: flowingGradient 15s ease infinite;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    padding: 5%;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--flavour) #1e1e2e;
+    transition: background 0.3s ease;
+}
+
+@keyframes flowingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
       .categories .links::-webkit-scrollbar {
           width: 6px;
@@ -259,10 +276,12 @@ class Tabs extends Component {
           display: flex;
           text-transform: uppercase;
           overflow-wrap: break-word;
-          width: 25px;
-          height: 300px;
+          width: 30px;
+          height: 320px;
           padding: 1em;
           margin: auto;
+          margin-top: 40px;
+          margin-bottom: 40px;
           border-radius: 5px;
           box-shadow: inset 0 0 0 2px var(--flavour);
           left: calc(15% - 42.5px);
