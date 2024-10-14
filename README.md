@@ -122,11 +122,38 @@ The project uses a modular structure with web components:
     * **`utils.js`:**  (Empty in provided code) For general utility functions.
 
 ## Banners Used
-|cbg-2|cbg-3|cbg-4|
-| ------------- | ------------- | ------------- | 
-|<img src="src/img/banners/bg2.gif" width=175>|<img src="src/img/banners/girl3.gif" width=175>|<img src="src/img/banners/chill.gif" width=175>|
+
+<div align="center">
+
+
+| page-1 | page-2 | page-3 |
+|--------|--------|--------|
+| <img src="src/img/banners/bg-3.gif" width="175"> | <img src="src/img/banners/girl.gif" width="175"> | <img src="src/img/banners/chill.gif" width="175"> |
+
+
+</div>
 
 
 ## Contributing
-a
-If you'd like to contribute to the Tokyonight Startup Page, feel free to fork the repository and submit pull requests.  Bug reports and feature suggestions are also welcome!
+
+If you'd like to contribute to the Tokyonight Startup Page, feel free to fork the repository and submit pull requests. Bug reports and feature suggestions are also welcome!
+
+We appreciate any contributions that can help improve the project. Here are some ways you can contribute:
+
+1. **Bug Reports:** If you encounter any issues while using the startup page, please open an issue on GitHub with a detailed description of the problem.
+
+2. **Feature Requests:** Have an idea for a new feature? Open an issue to discuss it with the community and maintainers.
+
+3. **Code Contributions:** If you'd like to add a new feature or fix a bug:
+   - Fork the repository
+   - Create a new branch for your feature or bugfix
+   - Make your changes
+   - Submit a pull request with a clear description of your changes
+
+4. **Documentation:** Help improve the README or add inline code comments to make the project more accessible to others.
+
+5. **Design:** If you have ideas for improving the user interface or user experience, we'd love to hear them!
+
+Please ensure that your contributions adhere to the project's coding standards and practices. When in doubt, don't hesitate to open an issue to discuss your ideas before making significant changes.
+
+Thank you for considering contributing to the Tokyonight Startup Page!
