@@ -4,7 +4,7 @@ A personalized, visually appealing start page inspired by [Dawn](https://github.
 
 ## Demo
 
-https://drive.google.com/file/d/1jLjHFb27iyfZ9GGg9Y0suH6o4_BBlCpR/view?usp=sharing
+https://github.com/user-attachments/assets/23a2c8d6-e52f-43de-b2b0-3552396a10d2
 
 ## Features
 
