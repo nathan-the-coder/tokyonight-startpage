@@ -3,8 +3,7 @@
 A personalized, visually appealing start page inspired by [Dawn](https://github.com/b-coimbra/dawn), tailored by Anubhav for [DreamDots](https://github.com/Terminal127/Hyprland-dotss)(private) rice. This customizable start page offers quick access to frequently used links, organized by tabs, along with integrated search functionality and a dynamic, animated background.
 
 ## Demo
-
-https://github.com/user-attachments/assets/23a2c8d6-e52f-43de-b2b0-3552396a10d2
+https://github.com/user-attachments/assets/00f3fe0b-5e81-4e99-a0c6-a7060627a725
 
 ## Features
 
