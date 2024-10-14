@@ -157,7 +157,11 @@ class Search extends Component {
         args = args.slice(1);
       }
   
-      window.location = engine + encodeURI(args.join(' '));
+        // Instead of window.location, create a link and click it:
+        const link = document.createElement('a');
+        link.href = engine + encodeURI(args.join(' '));
+        link.target = "_blank"; // Open in a new tab/window
+        link.click();
     }
   
     if (event instanceof KeyboardEvent && key === 'Escape')
