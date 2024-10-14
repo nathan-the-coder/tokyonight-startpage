@@ -122,7 +122,7 @@ The project uses a modular structure with web components:
     * **`utils.js`:**  (Empty in provided code) For general utility functions.
 
 ## Banners Used
-|cbg-2|cbg-3|cbg-4|cbg-5|
+|cbg-2|cbg-3|cbg-4|
 | ------------- | ------------- | ------------- | 
 |<img src="src/img/banners/bg2.gif" width=175>|<img src="src/img/banners/girl3.gif" width=175>|<img src="src/img/banners/chill.gif" width=175>|
 
