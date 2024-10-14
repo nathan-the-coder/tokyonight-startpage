@@ -9,9 +9,18 @@ class Config {
       format: "h:i p",
       iconColor: "#f38ba8",
     },
+    search: {
+      engines: {
+        g: ['https://google.com/search?q=', 'Google'],
+        y: ['https://youtube.com/results?search_query=', 'Youtube'],
+      }
+    },
     disabled: [],
     openLastVisitedTab: false,
     tabs: [],
+    keybindings: {
+      "s": 'search-bar'
+    }
   };
 
   config;

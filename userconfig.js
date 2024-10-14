@@ -10,8 +10,21 @@ const default_config = {
     format: "h:i p",
     iconColor: "#bb9af7", // Updated to a soft purple
   },
+  search: {
+    engines: {
+      g: ["https://google.com/search?q=", "Google"],
+      d: ["https://duckduckgo.com/html?q=", "DuckDuckGo"],
+      y: ["https://youtube.com/results?search_query=", "Youtube"],
+      r: ["https://www.reddit.com/search/?q=", "Reddit"],
+      p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
+    },
+  },
+  keybindings: {
+    "s": "search-bar",
+    "q": "config-tab",
+  },
   disabled: [],
-  fastlink: "https://app.raindrop.io",
+  fastlink: "https://wallpapers-clan.com",
   openLastVisitedTab: true,
   tabs: [
     {
@@ -267,4 +280,14 @@ const default_config = {
   ],
 };
 
-const CONFIG = new Config(default_config);
+const CONFIG = new Config(saved_config ?? default_config);
+// const CONFIG = new Config(default_config);
+
+(function() {
+  var css = document.createElement('link');
+  css.href = 'src/css/tabler-icons.min.css';
+  css.rel = 'stylesheet';
+  css.type = 'text/css';
+  if (!CONFIG.config.localIcons)
+    document.getElementsByTagName('head')[0].appendChild(css);
+})();
