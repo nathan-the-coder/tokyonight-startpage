@@ -3,7 +3,7 @@ let saved_config = JSON.parse(localStorage.getItem("CONFIG"));
 const default_config = {
   overrideStorage: true,
   temperature: {
-    location: "London",
+    location: "Kolkata",
     scale: "C",
   },
   clock: {
@@ -16,7 +16,8 @@ const default_config = {
       d: ["https://duckduckgo.com/html?q=", "DuckDuckGo"],
       y: ["https://youtube.com/results?search_query=", "Youtube"],
       r: ["https://www.reddit.com/search/?q=", "Reddit"],
-      p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
+      p: ["https://www.pinterest.com/search/pins/?q=", "Pinterest"],
+      w: ["https://en.wikipedia.org/wiki/Special:Search?search=", "Wikipedia"],
     },
   },
   keybindings: {
@@ -32,18 +33,18 @@ const default_config = {
       background_url: "src/img/banners/bg-3.gif",
       categories: [
         {
-          name: "bookmarks",
+          name: "AI Tools",
           links: [
             {
               name: "chatgpt",
               url: "https://chatgpt.com",
-              icon: "droplet-bolt",
+              icon: "message-circle",
               icon_color: "#7aa2f7", // Updated to a bright blue
             },
             {
               name: "claude",
               url: "https://claude.ai/new",
-              icon: "binary-tree",
+              icon: "brain",
               icon_color: "#ff9e64", // Updated to a soft orange
             },
           ],
@@ -64,10 +65,10 @@ const default_config = {
               icon_color: "#e0af68", // Updated to a gold
             },
             {
-              name: "sheets",
-              url: "https://docs.google.com/spreadsheets",
-              icon: "table",
-              icon_color: "#f7768e", // Updated to a soft pink
+              name: "Notion",
+              url: "https://www.notion.so",
+              icon: "notebook",
+              icon_color: "#f7768e",
             },
             {
               name: "drive",
@@ -78,7 +79,7 @@ const default_config = {
           ],
         },
         {
-          name: "media",
+          name: "Info",
           links: [
             {
               name: "ArchWiki",
@@ -87,9 +88,9 @@ const default_config = {
               icon_color: "#73daca", // Updated to a teal
             },
             {
-              name: "mil.in.ua",
-              url: "https://mil.in.ua",
-              icon: "badge-filled",
+              name: "Coursera",
+              url: "https://www.coursera.org",
+              icon: "school",
               icon_color: "#ff9e64", // Updated to a soft orange
             },
             {
@@ -246,35 +247,29 @@ const default_config = {
             },
           ],
         },
-        {
-          name: "video",
-          links: [
-            {
-              name: "anime",
-              url: "https://hianime.to/home",
-              icon: "brand-funimation",
-              icon_color: "#bb9af7", // Updated to a soft purple
-            },
-            {
-              name: "youtube",
-              url: "https://www.youtube.com",
-              icon: "brand-youtube",
-              icon_color: "#f7768e", // Updated to a soft pink
-            },
-            {
-              name: "patreon",
-              url: "https://www.patreon.com",
-              icon: "brand-patreon",
-              icon_color: "#e0af68", // Updated to a gold
-            },
-            {
-              name: "kyivstar",
-              url: "https://tv.kyivstar.ua",
-              icon: "star-filled",
-              icon_color: "#7dcfff", // Updated to a light blue
-            },
-          ],
-        },
+      {
+        name: "Video",
+        links: [
+          {
+            name: "Anime",
+            url: "https://www.crunchyroll.com",
+            icon: "brand-funimation",
+            icon_color: "#bb9af7", // Soft purple
+          },
+          {
+            name: "YouTube",
+            url: "https://www.youtube.com",
+            icon: "brand-youtube",
+            icon_color: "#f7768e", // Soft pink
+          },
+          {
+            name: "Patreon",
+            url: "https://www.patreon.com",
+            icon: "brand-patreon",
+            icon_color: "#e0af68", // Gold
+          },
+        ],
+      },
       ],
     },
   ],
@@ -291,3 +286,22 @@ const CONFIG = new Config(saved_config ?? default_config);
   if (!CONFIG.config.localIcons)
     document.getElementsByTagName('head')[0].appendChild(css);
 })();
+
+// // Merge saved config with default config, preferring saved values
+// const CONFIG = new Config(Object.assign({}, default_config, saved_config));
+
+// // Load Tabler icons CSS
+// (function() {
+//   if (!CONFIG.config.localIcons) {
+//     const css = document.createElement('link');
+//     css.href = 'https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css';
+//     css.rel = 'stylesheet';
+//     css.type = 'text/css';
+//     document.head.appendChild(css);
+//   }
+// })();
+
+// // Save config to localStorage whenever it changes
+// CONFIG.onChange = function(newConfig) {
+//   localStorage.setItem("CONFIG", JSON.stringify(newConfig));
+// };
