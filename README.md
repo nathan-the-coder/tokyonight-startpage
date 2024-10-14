@@ -121,6 +121,12 @@ The project uses a modular structure with web components:
     * **`strftime.js`:**  Provides time formatting functions.
     * **`utils.js`:**  (Empty in provided code) For general utility functions.
 
+## Banners Used
+|cbg-2|cbg-3|cbg-4|cbg-5|
+| ------------- | ------------- | ------------- | 
+|<img src="src/img/banners/bg2.gif" width=175>|<img src="src/img/banners/girl3.gif" width=175>|<img src="src/img/banners/chill.gif" width=175>|
+
+
 ## Contributing
 a
 If you'd like to contribute to the Tokyonight Startup Page, feel free to fork the repository and submit pull requests.  Bug reports and feature suggestions are also welcome!
