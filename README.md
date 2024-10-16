@@ -1,3 +1,23 @@
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/5fc76570-c832-4eb7-b646-6d9d65218e41" width="400" height="400">
+    <br><br>
+    <a href="https://github.com/Terminal127/tokyonight-startpage/commits">
+        <img src="https://img.shields.io/github/last-commit/Terminal127/tokyonight-startpage/?&style=for-the-badge&color=7aa2f7&logoColor=c0caf5&labelColor=1a1b26" alt="Last Commit">
+    </a>
+    <a href="https://github.com/Terminal127/tokyonight-startpage/stargazers">
+        <img src="https://img.shields.io/github/stars/Terminal127/tokyonight-startpage/?style=for-the-badge&logo=starship&color=bb9af7&logoColor=c0caf5&labelColor=1a1b26" alt="Stars">
+    </a>
+    <a href="https://github.com/Terminal127/tokyonight-startpage">
+        <img src="https://img.shields.io/github/repo-size/Terminal127/tokyonight-startpage/?color=7dcfff&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=c0caf5&labelColor=1a1b26" alt="Repo Size">
+    </a>
+    <a href="https://github.com/Terminal127/tokyonight-startpage//blob/main/LICENSE">
+        <img src="https://img.shields.io/github/license/Terminal127/tokyonight-startpage/style=for-the-badge&logo=starship&color=9ece6a&logoColor=c0caf5&labelColor=1a1b26" alt="License">
+    </a>
+    <a href="https://github.com/Terminal127/tokyonight-startpage//issues">
+        <img src="https://img.shields.io/github/issues/Terminal127/tokyonight-startpage/?style=for-the-badge&logo=bilibili&color=f7768e&logoColor=c0caf5&labelColor=1a1b26" alt="Issues">
+    </a>
+</div>
+
 # Tokyonight Startup Page
 
 A personalized, visually appealing start page inspired by [Dawn](https://github.com/b-coimbra/dawn), and [Taurus](https://github.com/AllJavi/tartarus-startpage) tailored by me for my [DreamDots](https://github.com/Terminal127/Hyprland-dotss)(private) rice. This customizable start page offers quick access to frequently used links, organized by tabs, along with integrated search functionality and a dynamic, animated background.
