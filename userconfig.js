@@ -65,9 +65,9 @@ const default_config = {
               icon_color: "#e0af68", // Updated to a gold
             },
             {
-              name: "Notion",
-              url: "https://www.notion.so",
-              icon: "notebook",
+              name: "Flatpak",
+              url: "https://flathub.org",
+              icon: "apps",
               icon_color: "#f7768e",
             },
             {
@@ -105,7 +105,7 @@ const default_config = {
     },
     {
       name: "dev",
-      background_url: "src/img/banners/girl.gif",
+      background_url: "src/img/banners/bg-2.gif",
       categories: [
         {
           name: "resources",
@@ -192,7 +192,7 @@ const default_config = {
     },
     {
       name: "chi ll",
-      background_url: "src/img/banners/chill.gif",
+      background_url: "src/img/banners/bg-7.gif",
       background_size: "150%",
       categories: [
         {
