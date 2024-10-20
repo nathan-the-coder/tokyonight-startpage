@@ -9,10 +9,13 @@ const default_config = {
   //   repeat: "no-repeat", // Optional: control background-repeat
   //   position: "center", // Optional: control background-position
   // },
-  tabsBackground: {
-    type: "image", // Can be "color" or "image"
-    value: "url(src/img/test.jpg)", // Default background image
+  
+    tabsBackground: {
+    type: "color", // Can be "color" or "image"
+    value: "#181825", // Default background image
   },
+
+
   temperature: {
     location: "Kolkata",
     scale: "C",

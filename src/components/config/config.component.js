@@ -4,6 +4,7 @@ class ConfigTab extends Component {
     textarea: '#config textarea[type="text"]',
     save: '.save',
     close: '.close',
+    reset: '.reset',
     search: '#config-search',
     matchCount: '#match-count',
     searchButton: '#search-button',
@@ -20,6 +21,46 @@ class ConfigTab extends Component {
 
   style() {
     return `
+      #config .save,
+      #config .reset,
+      #config .close {
+        background: 0;
+        border: 0;
+        outline: 0;
+        color: #7aa2f7;
+        position: absolute;
+        cursor: pointer;
+        top: 15px;
+        font-size: 18px;
+        font-family: 'Roboto';
+        transition: all .2s ease-in-out;
+      }
+
+      #config .save {
+        right: 120px;
+        padding: 6px 10px;
+        background: #3b4261;
+        border-radius: 4px;
+      }
+
+      #config .reset {
+        right: 40px;
+        padding: 5px 10px;
+        background: #f7768e;
+        color: #1a1b26;
+        border-radius: 4px;
+      }
+
+      #config .close {
+        right: 10px;
+      }
+
+      #config .save:hover,
+      #config .reset:hover,
+      #config .close:hover {
+        filter: brightness(1.2);
+      }
+
       #config {
         position: absolute;
         display: flex;
@@ -145,36 +186,6 @@ class ConfigTab extends Component {
         display: none;
       }
 
-      #config .save,
-      #config .close {
-        background: 0;
-        border: 0;
-        outline: 0;
-        color: #7aa2f7;
-        position: absolute;
-        cursor: pointer;
-        top: 15px;
-        font-size: 18px;
-        font-family: 'Roboto';
-        transition: all .2s ease-in-out;
-      }
-
-      #config .save {
-        right: 40px;
-        padding: 5px 10px;
-        background: #3b4261;
-        border-radius: 4px;
-      }
-
-      #config .close {
-        right: 10px;
-      }
-
-      #config .save:hover,
-      #config .close:hover {
-        filter: brightness(1.2);
-      }
-
       .highlight {
         background-color: rgba(122, 162, 247, 0.3);
       }
@@ -213,10 +224,36 @@ class ConfigTab extends Component {
           </div>
           <textarea type="text" spellcheck="false"></textarea>
           <button class="save">Save</button>
+          <button class="reset">Reset</button>
           <button class="close"><i class="material-icons">&#xE5CD;</i></button>
         </div>
       </div>
     `;
+  }
+
+  resetConfig() {
+    try {
+      localStorage.removeItem("CONFIG");
+      localStorage.removeItem("config");
+      
+      const defaultConfig = new Config(default_config);
+      
+      this.refs.textarea.value = JSON.stringify(defaultConfig, null, 2);
+      
+      this.showNotification('Configuration reset to defaults. Click Save to apply changes.', 'info');
+    } catch (error) {
+      this.showNotification('Error resetting configuration: ' + error.message, 'error');
+    }
+  }
+
+  confirmReset() {
+    const confirmed = window.confirm(
+      'Are you sure you want to reset all settings to default? This action cannot be undone.'
+    );
+    
+    if (confirmed) {
+      this.resetConfig();
+    }
   }
 
   findMatches(searchTerm) {
@@ -241,9 +278,8 @@ class ConfigTab extends Component {
     textarea.focus();
     textarea.setSelectionRange(start, end);
     
-    // Calculate scroll position
     const text = textarea.value.substring(0, start);
-    const lineHeight = 20; // Approximate line height
+    const lineHeight = 20;
     const lineNumber = text.split('\n').length;
     const scrollPosition = lineNumber * lineHeight - textarea.clientHeight / 2;
     
@@ -257,7 +293,6 @@ class ConfigTab extends Component {
       `${current} of ${count} matches` : 
       'No matches';
     
-    // Update navigation buttons
     this.refs.prevButton.disabled = count === 0;
     this.refs.nextButton.disabled = count === 0;
   }
@@ -310,14 +345,12 @@ class ConfigTab extends Component {
       if (event.ctrlKey) {
         this.saveConfig();
       } else if (this.matches.length > 0) {
-        // Navigate through existing matches
         if (event.shiftKey) {
           this.navigateToPreviousMatch();
         } else {
           this.navigateToNextMatch();
         }
       } else {
-        // Execute new search
         this.executeSearch();
       }
       event.preventDefault();
@@ -361,6 +394,7 @@ class ConfigTab extends Component {
     this.refs.nextButton.onclick = () => this.navigateToNextMatch();
     this.refs.close.onclick = () => this.deactivate();
     this.refs.save.onclick = () => this.saveConfig();
+    this.refs.reset.onclick = () => this.confirmReset();
   }
 
   setConfig() {
@@ -368,7 +402,6 @@ class ConfigTab extends Component {
   }
 
   showNotification(message, type) {
-    // Implementation of notification system goes here
     console.log(`${type.toUpperCase()}: ${message}`);
   }
 
