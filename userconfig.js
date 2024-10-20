@@ -2,6 +2,17 @@ let saved_config = JSON.parse(localStorage.getItem("CONFIG"));
 
 const default_config = {
   overrideStorage: true,
+  // tabsBackground: {
+  //   type: "image", // Can be "color" or "image"
+  //   value: "url(src/img/test.jpg)", // Default background image
+  //   size: "cover", // Optional: control background-size
+  //   repeat: "no-repeat", // Optional: control background-repeat
+  //   position: "center", // Optional: control background-position
+  // },
+  tabsBackground: {
+    type: "image", // Can be "color" or "image"
+    value: "url(src/img/test.jpg)", // Default background image
+  },
   temperature: {
     location: "Kolkata",
     scale: "C",
@@ -286,6 +297,9 @@ const CONFIG = new Config(saved_config ?? default_config);
   if (!CONFIG.config.localIcons)
     document.getElementsByTagName('head')[0].appendChild(css);
 })();
+
+CONFIG.setBackground(CONFIG.config.tabsBackground);
+
 
 // // Merge saved config with default config, preferring saved values
 // const CONFIG = new Config(Object.assign({}, default_config, saved_config));
