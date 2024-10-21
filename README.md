@@ -60,15 +60,13 @@ This project is designed for ease of use. Simply download and open in a browser.
 ## Banners Used
 
 <div align="center">
-
-
-| page-1 | page-2 | page-3 |
-|--------|--------|--------|
-| <img src="src/img/banners/bg-1.gif" width="175"> | <img src="src/img/banners/bg-2.gif" width="175"> | <img src="src/img/banners/bg-3.gif" width="175"> |
-| <img src="src/img/banners/bg-4.gif" width="175"> | <img src="src/img/banners/bg-5.gif" width="175"> | <img src="src/img/banners/bg-6.gif" width="175"> |
-| <img src="src/img/banners/bg-7.gif" width="175"> | <img src="src/img/banners/bg-8.gif" width="175"> | <img src="src/img/banners/bg-9.gif" width="175"> |
-| <img src="src/img/banners/bg-10.gif" width="175"> | <img src="src/img/banners/bg-11.gif" width="175"> | <img src="src/img/banners/bg-12.gif" width="175"> |
-
+  
+|  |  |  |
+|:---:|:---:|:---:|
+| [<img src="src/img/banners/bg-1.gif" width="250" />](src/img/banners/bg-1.gif) | [<img src="src/img/banners/bg-2.gif" width="250" />](src/img/banners/bg-2.gif) | [<img src="src/img/banners/bg-3.gif" width="250" />](src/img/banners/bg-3.gif) |
+| [<img src="src/img/banners/bg-4.gif" width="250" />](src/img/banners/bg-4.gif) | [<img src="src/img/banners/bg-5.gif" width="250" />](src/img/banners/bg-5.gif) | [<img src="src/img/banners/bg-6.gif" width="250" />](src/img/banners/bg-6.gif) |
+| [<img src="src/img/banners/bg-7.gif" width="250" />](src/img/banners/bg-7.gif) | [<img src="src/img/banners/bg-8.gif" width="250" />](src/img/banners/bg-8.gif) | [<img src="src/img/banners/bg-9.gif" width="250" />](src/img/banners/bg-9.gif) |
+| [<img src="src/img/banners/bg-10.gif" width="250" />](src/img/banners/bg-10.gif) | [<img src="src/img/banners/bg-11.gif" width="250" />](src/img/banners/bg-11.gif) | [<img src="src/img/banners/bg-12.gif" width="250" />](src/img/banners/bg-12.gif) |
 
 </div>
 
