@@ -58,6 +58,10 @@ This project is designed for ease of use. Simply download and open in a browser.
 
 ## Banners Used
 
+> [!IMPORTANT]
+> The gifs may take some time for preview depending on your network speed, 
+> You can see these in the `src/img/banner` subfolder
+
 <div align="center">
   
 |  |  |  |
