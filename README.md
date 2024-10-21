@@ -25,22 +25,19 @@ A personalized, visually appealing start page for my [DreamDots](https://github.
 ## Demo
 https://github.com/user-attachments/assets/00f3fe0b-5e81-4e99-a0c6-a7060627a725
 
-## Features
+**Key Features:**
 
-* **Customizable Tabs:** Design your start page with custom tabs, each housing categorized links. Every tab can be personalized with a unique background image, color scheme, and icon. This allows for a highly organized and visually appealing structure.
+* **Visually Stunning & Organized Tabs:**  Craft a personalized browsing experience with customizable tabs.  Categorize your links, and give each tab a unique personality with custom panel images (including animated GIFs!), color schemes, and icons.  Detailed documentation guides you through customizing every component, empowering even those unfamiliar with JavaScript to create a visually stunning and organized start page.
 
-* **Integrated Search:** Search the web effortlessly directly from the start page using your favorite search engines.  The search bar supports prefixes (e.g., `!g`) to specify which engine to use, streamlining your workflow.
+* **Effortless Web Searching:** Search the web directly from your start page using your preferred search engines.  Prefixes (e.g., `!g` for Google, `!d` for DuckDuckGo) streamline your searches.  An enhanced search bar features custom search quick strings and completion suggestions based on your search history, making finding what you need faster than ever with a history feature that lets you autocomplete your last searched item using the searchtab and persists over sessions.
 
-* **Dynamic Backgrounds:** Set animated GIF backgrounds or static images for each tab to create a captivating and personalized experience. This brings life and personality to your start page.
+* **Dynamic & Engaging Backgrounds:** Bring your start page to life with dynamic animated GIF backgrounds or static images for each tab.  Instantly switch the global background wallpaper using the quick configurator (activated by pressing `q`).  Express yourself and set the mood with captivating visuals.
 
-* **Easy Configuration:**  Personalize your start page with ease through the `userconfig.js` file. Here, you can modify links, tabs, search engines, and various other settings.  A convenient in-browser editor, accessible through the `ConfigTab` component, allows for real-time configuration updates.  Just press 'q' to bring up the configurator, edit the JSON, and Ctrl+Enter to save and reload.
+* **Intuitive & Easy Configuration:**  Personalize Tokyonight effortlessly with the `userconfig.js` file.  Modify links, tabs, search engines, and various other settings.  The integrated in-browser configurator, accessible via the `ConfigTab` component (activated with the `q` key), provides real-time feedback as you edit the JSON configuration.  Click "Save" and your changes are applied instantly you can direcly search the element in the search option given in the config changing process which allows you to search an item or cycle through multiple items to help you exactly find the element which you want to change making this process more robust and easy.
 
-* **Keybindings:** Streamline your navigation by defining keybindings for quick access to core functionalities. The default configuration provides shortcuts for activating the search bar (`s`) and configurator (`q`).  These can be customized in `userconfig.js`.
+* **Streamlined Navigation with Keybindings:** Optimize your workflow with customizable keybindings.  Quickly access core features like the search bar (`s`) and configurator (`q`).  Define your own shortcuts in `userconfig.js` for an even more personalized experience.
 
-* **Local Storage:** Your personalized configuration is automatically saved to your browser's local storage, ensuring your settings are preserved across sessions.
-
-* **Built with Web Components:**  Tokyonight utilizes a modern web component architecture, promoting modularity and extensibility.  This makes it easy to update and maintain individual components without affecting others.
-
+* **Persistent Personalization with Local Storage:** Your customized configuration is automatically saved to your browser's local storage, preserving your settings across browsing sessions.  A new feature allows you to clear this local storage directly within the configurator, providing a more convenient alternative to clearing browser cookies (although clearing browser data will also remove the configuration).
 
 
 ## Installation and Setup
@@ -48,13 +45,15 @@ https://github.com/user-attachments/assets/00f3fe0b-5e81-4e99-a0c6-a7060627a725
 This project is designed for ease of use. Simply download and open in a browser. No server-side setup is required.
 
 1. **Clone or Download:**
-   - **Clone the Repository (Recommended for Developers):**
+   - **Clone the Repository:**
      ```bash
      git clone https://github.com/your-username/Tokyonight-startup-page.git
      ```
    - **Download as ZIP (Simpler for Users):**  Download the project as a ZIP file from the repository and extract it to a local folder.
 
 2. **Open `index.html`:**  Navigate to the project folder and open the `index.html` file in your preferred web browser.  This will load the start page.
+
+3. You can use the google extention  named `custom new Tab url` which allows you to set a local file as the startup page or you can direcly upload the project using github pages in your own repo using your custom configs :)
 
 
 ## Banners Used
