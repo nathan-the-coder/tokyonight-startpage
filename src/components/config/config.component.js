@@ -44,7 +44,7 @@ class ConfigTab extends Component {
       }
 
       #config .reset {
-        right: 40px;
+        right: 49px;
         padding: 5px 10px;
         background: #f7768e;
         color: #1a1b26;
@@ -82,13 +82,8 @@ class ConfigTab extends Component {
       }
 
       #config div {
-        position: relative;
-        width: 80%;
-        max-width: 800px;
-        background: #1f2335;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          position: relative;
+          width: 80%;
       }
 
       .search-container {
@@ -359,7 +354,8 @@ class ConfigTab extends Component {
 
   activate() {
     this.refs.config.classList.add('active');
-    this.refs.search.focus();
+    this.refs.textarea.scrollIntoView();
+    setTimeout(() => this.refs.textarea.focus(), 100);
   }
 
   deactivate() {
