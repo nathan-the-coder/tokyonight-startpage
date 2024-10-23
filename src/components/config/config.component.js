@@ -1,6 +1,7 @@
 class ConfigTab extends Component {
   refs = {
     config: '#config',
+    configPanel: '#config-panel',
     textarea: '#config textarea[type="text"]',
     save: '.save',
     close: '.close',
@@ -17,6 +18,7 @@ class ConfigTab extends Component {
     this.config = JSON.parse(localStorage.getItem("config")).config;
     this.currentMatchIndex = -1;
     this.matches = [];
+    this.isConfigOpen = false;
   }
 
   style() {
@@ -62,28 +64,34 @@ class ConfigTab extends Component {
       }
 
       #config {
-        position: absolute;
+        position: fixed;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: calc(100% - 2px);
+        width: 100%;
         height: 100%;
-        background: rgba(26, 27, 38, 0.8);
-        z-index: 99;
+        background: rgba(26, 27, 38, 0.95);
+        z-index: 999;
         visibility: hidden;
         top: -100%;
         backdrop-filter: blur(5px);
         transition: all .3s ease-in-out;
+        left: 0;
       }
 
       #config.active {
         top: 0;
         visibility: visible;
       }
-
-      #config div {
-          position: relative;
-          width: 80%;
+      
+      #config-panel {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        background: #1f2335;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
 
       .search-container {
@@ -180,7 +188,6 @@ class ConfigTab extends Component {
       #config textarea::-webkit-scrollbar {
         display: none;
       }
-
       .highlight {
         background-color: rgba(122, 162, 247, 0.3);
       }
@@ -202,7 +209,7 @@ class ConfigTab extends Component {
   template() {
     return `
       <div id="config">
-        <div>
+        <div id="config-panel">
           <div class="search-container">
             <input type="text" id="config-search" placeholder="Type search term..." spellcheck="false">
             <button id="search-button">
@@ -224,6 +231,28 @@ class ConfigTab extends Component {
         </div>
       </div>
     `;
+  }
+
+  preventClose(event) {
+    if (this.isConfigOpen) {
+      event.preventDefault();
+      event.returnValue = '';
+      return event.returnValue;
+    }
+  }
+
+  handleOutsideClick(event) {
+    const configPanel = this.refs.configPanel;
+    const searchContainer = configPanel.querySelector('.search-container');
+    
+    // Allow clicks within the search container and its children
+    if (this.isConfigOpen && 
+        !configPanel.contains(event.target) && 
+        !searchContainer.contains(event.target)) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.refs.textarea.focus();
+    }
   }
 
   resetConfig() {
@@ -332,38 +361,91 @@ class ConfigTab extends Component {
     const { key } = event;
     
     if (key === 'Escape') {
-      this.deactivate();
+      event.preventDefault();
+      // If in search, clear search and focus textarea
+      if (document.activeElement === this.refs.search) {
+        this.refs.search.value = '';
+        this.matches = [];
+        this.currentMatchIndex = -1;
+        this.updateMatchCount();
+        this.refs.textarea.focus();
+      } else {
+        this.refs.textarea.focus();
+      }
       return;
     }
     
     if (key === 'Enter') {
       if (event.ctrlKey) {
         this.saveConfig();
+      } else if (document.activeElement === this.refs.search) {
+        this.executeSearch();
       } else if (this.matches.length > 0) {
         if (event.shiftKey) {
           this.navigateToPreviousMatch();
         } else {
           this.navigateToNextMatch();
         }
-      } else {
-        this.executeSearch();
       }
       event.preventDefault();
+    }
+
+    // Add ctrl+f shortcut to focus search
+    if (event.ctrlKey && key.toLowerCase() === 'f') {
+      event.preventDefault();
+      this.refs.search.focus();
     }
   }
 
   activate() {
+    this.isConfigOpen = true;
     this.refs.config.classList.add('active');
     this.refs.textarea.scrollIntoView();
     setTimeout(() => this.refs.textarea.focus(), 100);
+    
+    // Add event listeners
+    window.addEventListener('beforeunload', this.preventClose.bind(this));
+    document.addEventListener('click', this.handleOutsideClick.bind(this));
+    document.addEventListener('keydown', this.handleKeyDown.bind(this));
+    
+    // Add keypress listener to both textarea and search input
+    this.refs.textarea.addEventListener('keydown', this.handleKeyPress.bind(this));
+    this.refs.search.addEventListener('keydown', this.handleKeyPress.bind(this));
   }
 
+  // Update deactivate to clean up all event listeners
   deactivate() {
+    // Check for unsaved changes
+    const currentConfig = this.refs.textarea.value;
+    const originalConfig = JSON.stringify(this.config, null, 2);
+    
+    if (currentConfig !== originalConfig) {
+      const confirmed = window.confirm('You have unsaved changes. Are you sure you want to close?');
+      if (!confirmed) {
+        return;
+      }
+    }
+    
+    this.isConfigOpen = false;
     this.refs.config.classList.remove('active');
     this.refs.search.value = '';
     this.matches = [];
     this.currentMatchIndex = -1;
     this.updateMatchCount();
+    
+    // Remove event listeners
+    window.removeEventListener('beforeunload', this.preventClose.bind(this));
+    document.removeEventListener('click', this.handleOutsideClick.bind(this));
+    document.removeEventListener('keydown', this.handleKeyDown.bind(this));
+    this.refs.textarea.removeEventListener('keydown', this.handleKeyPress.bind(this));
+    this.refs.search.removeEventListener('keydown', this.handleKeyPress.bind(this));
+  }
+
+  handleKeyDown(event) {
+    if (event.key === 'Escape' && this.isConfigOpen) {
+      event.preventDefault();
+      this.refs.textarea.focus();
+    }
   }
 
   saveConfig() {
@@ -382,12 +464,30 @@ class ConfigTab extends Component {
     this.refs.search.onkeydown = (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
+        this.executeSearch();
       }
     };
     this.refs.search.onkeyup = (e) => this.handleKeyPress(e);
-    this.refs.searchButton.onclick = () => this.executeSearch();
-    this.refs.prevButton.onclick = () => this.navigateToPreviousMatch();
-    this.refs.nextButton.onclick = () => this.navigateToNextMatch();
+    this.refs.searchButton.onclick = (e) => {
+      e.stopPropagation(); // Prevent the outside click handler
+      this.executeSearch();
+    };
+    this.refs.prevButton.onclick = (e) => {
+      e.stopPropagation();
+      this.navigateToPreviousMatch();
+    };
+    
+    this.refs.nextButton.onclick = (e) => {
+      e.stopPropagation();
+      this.navigateToNextMatch();
+    };
+    this.refs.search.onclick = (e) => {
+      e.stopPropagation();
+    };
+    
+    this.refs.search.onfocus = (e) => {
+      e.stopPropagation();
+    };
     this.refs.close.onclick = () => this.deactivate();
     this.refs.save.onclick = () => this.saveConfig();
     this.refs.reset.onclick = () => this.confirmReset();
