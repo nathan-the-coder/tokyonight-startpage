@@ -68,7 +68,7 @@ This project is designed for ease of use. Simply download and open in a browser.
 1. **Clone or Download:**
    - **Clone the Repository:**
      ```bash
-     git clone https://github.com/your-username/Tokyonight-startup-page.git
+     git clone https://github.com/Terminal127/tokyonight-startpage
      ```
    - **Download as ZIP (Simpler for Users):**  Download the project as a ZIP file from the repository and extract it to a local folder.
 
