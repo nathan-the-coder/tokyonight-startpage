@@ -76,8 +76,9 @@ This project is designed for ease of use. Simply download and open in a browser.
 
 3. You can use the google extention  named `custom new Tab url` which allows you to set a local file as the startup page or you can direcly upload the project using github pages in your own repo using your custom configs :)
 
-
-## Banners Used
+<details>
+  
+ <summary>Banners Used</summary>
 
 > [!IMPORTANT]
 > The gifs may take some time for preview depending on your network speed, 
@@ -93,6 +94,8 @@ This project is designed for ease of use. Simply download and open in a browser.
 | [<img src="src/img/banners/bg-10.gif" width="250" />](src/img/banners/bg-10.gif) | [<img src="src/img/banners/bg-11.gif" width="250" />](src/img/banners/bg-11.gif) | [<img src="src/img/banners/bg-12.gif" width="250" />](src/img/banners/bg-12.gif) |
 
 </div>
+
+</details>
 
 ## Credits
 
