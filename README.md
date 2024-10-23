@@ -76,6 +76,25 @@ This project is designed for ease of use. Simply download and open in a browser.
 
 3. You can use the google extention  named `custom new Tab url` which allows you to set a local file as the startup page or you can direcly upload the project using github pages in your own repo using your custom configs :)
 
+Here's a more professional formatting of that note using Markdown:
+
+> [!IMPORTANT]  
+> **Customizing Your Configuration:**
+> 
+> **Option 1: Manual Animation Removal**
+> - Review the wiki documentation
+> - Identify and remove unnecessary animation lines
+> - Customize according to your preferences
+>
+> **Option 2: Using Git Checkout (Recommended)**
+> ```bash
+> # Check out a specific version for basic configuration
+> git checkout 94f2cb0e688635c0abcc69f6778abe71de3e5f2c
+> ```
+> This allows direct configuration from a clean, minimal state.
+
+
+
 <details>
   
  <summary>Banners Used</summary>
