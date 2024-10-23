@@ -39,6 +39,27 @@ https://github.com/user-attachments/assets/00f3fe0b-5e81-4e99-a0c6-a7060627a725
 
 * **Persistent Personalization with Local Storage:** Your customized configuration is automatically saved to your browser's local storage, preserving your settings across browsing sessions.  A new feature allows you to clear this local storage directly within the configurator, providing a more convenient alternative to clearing browser cookies (although clearing browser data will also remove the configuration).
 
+## Screenshots 
+<!-- The main images section -->
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/Terminal127/tokyonight-startpage/blob/main/assets/screenshot-2024-10-23_10-55-24.jpg" alt="Image 2">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/Terminal127/tokyonight-startpage/blob/main/assets/screenshot-2024-10-20_20-16-28.jpg" alt="Image 1">
+      </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <img src="https://github.com/Terminal127/tokyonight-startpage/blob/main/assets/screenshot-2024-10-23_10-59-28.jpg" alt="Image 3">
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## Installation and Setup
 
