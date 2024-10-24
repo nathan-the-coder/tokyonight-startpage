@@ -11,7 +11,7 @@
         <img src="https://img.shields.io/github/repo-size/Terminal127/tokyonight-startpage?color=7dcfff&label=SIZE&logo=files&style=for-the-badge&logoColor=c0caf5&labelColor=1a1b26" alt="Repo Size">
     </a>
     <a href="https://github.com/Terminal127/tokyonight-startpage/blob/master/LICENSE">
-        <img src="https://img.shields.io/github/license/Terminal127/tokyonight-startpage?style=for-the-badge&logo=starship&color=9ece6a&logoColor=c0caf5&labelColor=1a1b26" alt="License">
+        <img src="https://img.shields.io/badge/license-MIT-orange.svg?style=for-the-badge&logo=linux&color=9ece6a&logoColor=c0caf5&labelColor=1a1b26">
     </a>
     <a href="https://github.com/Terminal127/tokyonight-startpage/issues">
         <img src="https://img.shields.io/github/issues/Terminal127/tokyonight-startpage?style=for-the-badge&logo=bilibili&color=f7768e&logoColor=c0caf5&labelColor=1a1b26" alt="Issues">
