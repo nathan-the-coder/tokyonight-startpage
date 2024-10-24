@@ -76,7 +76,19 @@ This project is designed for ease of use. Simply download and open in a browser.
 
 3. You can use the google extention  named `custom new Tab url` which allows you to set a local file as the startup page or you can direcly upload the project using github pages in your own repo using your custom configs :)
 
-Here's a more professional formatting of that note using Markdown:
+# Keybinds
+
+| Keys | Action |
+| :--- | :--- |
+| <kbd>s</kbd> | Open the search panel |
+| <kbd>Up</kbd> / <kbd>Down</kbd>   | naviate history :search panel|
+|  <kbd>Esc</kbd> | close the search :search panel| 
+| <kbd>q</kbd>  | Opens the config panel |
+| <kbd>Ctrl</kbd> + <kbd>F</kbd> | Focus search input :config panel|
+| <kbd>Enter</kbd> | (in search input) Execute search :config panel|
+| <kbd>Shift</kbd> + <kbd>Enter</kbd> | (in textarea) Go to next match :config panel|
+| <kbd>Ctrl</kbd> + <kbd>Enter</kbd> | Save configuration :config panel|
+
 
 > [!IMPORTANT]  
 > **Customizing Your Configuration:**
@@ -102,6 +114,8 @@ Here's a more professional formatting of that note using Markdown:
 > [!IMPORTANT]
 > The gifs may take some time for preview depending on your network speed, 
 > You can see these in the `src/img/banner` subfolder
+
+
 
 <div align="center">
   
